@@ -7,7 +7,6 @@ class GoogleSheetsRequest(BaseModel):
 class DataSync:
     async def get_google_sheets_data(request_data: GoogleSheetsRequest):
         try:
-            print("google")
             print(request_data.token)
 
             return {"success": "Data received"}
