@@ -1,0 +1,14 @@
+# Python cache
+__pycache__/
+
+# Python Venv
+venv/
+
+# PyInstaller build
+build/
+
+# PyInstaller server spec
+lottiesync-api.spec
+
+# Executable dir
+dist/

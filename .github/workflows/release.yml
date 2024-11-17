@@ -1,0 +1,43 @@
+name: Release LottieSync API
+
+on:
+  push:
+    tags:
+      - v*
+  workflow_dispatch:
+
+env:
+  PRODUCT_NAME: LottieSync API
+
+jobs:
+  build-and-release:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Package application with PyInstaller
+        run: python package.py
+
+      - name: Upload Windows Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: lottiesync-api-executable
+          path: dist/lottiesync-api.exe
+
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1
+        with:
+          artifacts: dist/lottiesync-api.exe
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+          name: Release ${{ github.ref_name }}
