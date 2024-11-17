@@ -12,3 +12,6 @@ lottiesync-api.spec
 
 # Executable dir
 dist/
+
+# Server logs
+server.log
