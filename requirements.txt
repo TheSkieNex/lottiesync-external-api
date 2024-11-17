@@ -1,3 +1,4 @@
 pyinstaller
 fastapi
 uvicorn
+google-api-python-client
