@@ -1,4 +1,4 @@
-name: Release LottieSync API
+name: Release LottieSync External API
 
 on:
   push:
@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: lottiesync-api-executable
-          path: dist/lottiesync-api.exe
+          path: dist/lottiesync-external-api.exe
 
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1
