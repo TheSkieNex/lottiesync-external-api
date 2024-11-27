@@ -5,6 +5,6 @@ PyInstaller.__main__.run([
     "--clean",
     "--onefile",
     "--noconsole",
-    "--name=lottiesync-api",
+    "--name=lottiesync-external-api",
     # "--icon=assets/256x256.ico"
 ])

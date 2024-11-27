@@ -14,7 +14,7 @@ class DataSync:
             service = build("sheets", "v4", developerKey=request_data.api_key)
 
             sheet = service.spreadsheets()
-            result = sheet.values().get(spreadsheetId=request_data.spreadsheet_id, range=request_data.range_name).execute()
+            result = sheet.values().get(spreadsheetId=request_data.spreadsheet_id, range=request_data.range).execute()
         
             values = result.get("values")
 
